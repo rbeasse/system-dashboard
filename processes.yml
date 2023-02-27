@@ -1,0 +1,17 @@
+api:
+  name: ruby
+  cwd: /projects/asd_api
+  cmdline: puma \d\.\d\.\d .*
+
+connect:
+  name: ruby
+  cwd: /projects/EcoSearch
+  cmdline: puma \d\.\d\.\d .*
+
+redis:
+  name: redis-server
+  cmdline: /usr/bin/redis-server.*
+
+mysql:
+  name: mysqld
+  cmdline: /usr/sbin/mysqld

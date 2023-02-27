@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>System Dashboard</title>
+    <link rel="stylesheet" href="static/css/main.css">
+    <script type="text/javascript" src="static/js/chart.umd.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+  </head>
+
+  <body>
+    <section class="main">
+      <h1>Dashboard</h1>
+      <ul class="label_value_list">
+        {% for key, value in system.items() %}
+        <li>
+          <div class="label">{{key}}</div>
+          <div>{{value}}</div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <div class="chart">
+        <canvas id="chart" data-chart-url="{{chart_url}}"></canvas>
+      </div>
+
+      <h1>Processes</h1>
+      <ul class="label_value_list">
+        <li>
+          <div class="label">System</div>
+          <div><a href="/">View</a></div>
+        </li>
+
+        {% for key, value in processes.items() %}
+          <li>
+            <div class="label">{{key}}</div>
+            <div><a href="{{value}}">View</a></div>
+          </li>
+        {% endfor %}
+      </ul>
+      </body>
+    </section>
+</html>
